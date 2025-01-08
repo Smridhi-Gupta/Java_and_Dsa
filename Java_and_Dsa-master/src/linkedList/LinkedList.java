@@ -26,6 +26,7 @@ public class LinkedList {
         // step3 = head = newNode
         head = newNode;
     }
+
     public void addLast(int data) {
         Node newNode = new Node(data);
         size++;
@@ -35,6 +36,7 @@ public class LinkedList {
         tail.next = newNode;
         tail = newNode;
     }
+
     public void print() {
         if (head == null) {
             System.out.println("Ll is empty");
@@ -47,6 +49,7 @@ public class LinkedList {
         }
         System.out.println("null");
     }
+
     public void addAnywhere(int index, int data) {
         if (index == 0) {
             addFirst(data);
@@ -64,6 +67,7 @@ public class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
     }
+
     public int removeFirst() {
         if (size == 0) {
             System.out.println("LL is empty");
@@ -79,6 +83,7 @@ public class LinkedList {
         size--;
         return val;
     }
+
     public int removeLast() {
         if (size == 0) {
             System.out.println("LL is empty");
@@ -100,6 +105,7 @@ public class LinkedList {
         size--;
         return val;
     }
+
     public int itrSearch(int key) {
         Node temp = head;
         int i = 0;
@@ -114,6 +120,7 @@ public class LinkedList {
         // key not found
         return -1;
     }
+
     public int helper(Node head, int key) {
         if (head == null) {
             return -1;
@@ -127,9 +134,11 @@ public class LinkedList {
         }
         return idx+1;
     }
+
     public int recSearch(int key) {
         return helper(head, key);
     }
+
     public void reverse() {
         Node prev = null;
         Node curr = tail = head;
@@ -142,6 +151,7 @@ public class LinkedList {
         }
         head = prev;
     }
+
     public void deleteNthFromEnd(int n) {
         // calculate size
         int sz = 0;
@@ -165,45 +175,95 @@ public class LinkedList {
         prev.next = prev.next.next;
         return;
     }
+
+    public  Node findMid(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next == null) {
+            slow = slow.next; // +1
+            fast = fast.next.next; // +2
+        }
+        return slow; // slow is my midNode
+    }
+
+    public boolean checkPalindrome() {
+        if (head == null || head.next != null) { // empty or 1 element
+            return true;
+        }
+        // step 1 - find mid
+        Node midNode = findMid(head);
+
+        // step 2 - reverse 2nd half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev; // right half head
+        Node left = head;
+
+        // step 3 - check left half & right half
+        while (right != null) {
+            if (left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.print();
-
-        ll.addFirst(2);
-        ll.print();
-
-        ll.addFirst(1);
-        ll.print();
-
-        ll.addLast(3);
-        ll.print();
-
-        ll.addLast(4);
-        ll.print();
-
-        ll. addAnywhere(2, 9);
-        ll.print();
+//        ll.print();
+//
+//        ll.addFirst(2);
+//        ll.print();
+//
+//        ll.addFirst(1);
+//        ll.print();
+//
+//        ll.addLast(3);
+//        ll.print();
+//
+//        ll.addLast(4);
+//        ll.print();
+//
+//        ll. addAnywhere(2, 9);
+//        ll.print();
+////        System.out.println(ll.size);
+//        ll.removeFirst();
+//        ll.print();
+//
+//        ll.removeLast();
+//        ll.print();
 //        System.out.println(ll.size);
-        ll.removeFirst();
-        ll.print();
+//
+//        System.out.println(ll.itrSearch(3));
+//
+//        System.out.println(ll.recSearch(3));
+//        ll.reverse();
+//        ll.print();
+//
+//        ll.deleteNthFromEnd(2);
+//        ll.print();
+//
+//        ll.addFirst(10);
+//        ll.addFirst(11);
+//        ll.addFirst(12);
+//        ll.addFirst(13);
+//        ll.print();
 
-        ll.removeLast();
-        ll.print();
-        System.out.println(ll.size);
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(2);
+        ll.addLast(1);
 
-        System.out.println(ll.itrSearch(3));
-
-        System.out.println(ll.recSearch(3));
-        ll.reverse();
-        ll.print();
-
-        ll.deleteNthFromEnd(2);
-        ll.print();
-
-        ll.addFirst(10);
-        ll.addFirst(11);
-        ll.addFirst(12);
-        ll.addFirst(13);
-        ll.print();
+        ll.print(); // 1->2->2->1
+        System.out.println(ll.checkPalindrome());
     }
 }
