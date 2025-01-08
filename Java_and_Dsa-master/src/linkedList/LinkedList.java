@@ -217,7 +217,7 @@ public class LinkedList {
         return true;
     }
     
-    public static boolean isCycle() {
+    public static boolean isCycle() { // Floyd's Cycle Finding Algorithm
         Node slow = head;
         Node fast = head;
         
