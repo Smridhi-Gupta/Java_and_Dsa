@@ -216,6 +216,21 @@ public class LinkedList {
         }
         return true;
     }
+    
+    public static boolean isCycle() {
+        Node slow = head;
+        Node fast = head;
+        
+        while(fast != null && fast.next != null) {
+            slow = slow.next; // +1
+            fast = fast.next.next; // +2
+            if (slow == fast) {
+                return true; // cycle exists
+            }
+        }
+
+        return false; // cycle doesn't exist
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -235,7 +250,7 @@ public class LinkedList {
 //
 //        ll. addAnywhere(2, 9);
 //        ll.print();
-////        System.out.println(ll.size);
+//        System.out.println(ll.size);
 //        ll.removeFirst();
 //        ll.print();
 //
@@ -258,12 +273,19 @@ public class LinkedList {
 //        ll.addFirst(13);
 //        ll.print();
 
-        ll.addLast(1);
-        ll.addLast(2);
-        ll.addLast(2);
-        ll.addLast(1);
+//        ll.addLast(1);
+//        ll.addLast(2);
+//        ll.addLast(2);
+//        ll.addLast(1);
+//
+//        ll.print(); // 1->2->2->1
+//        System.out.println(ll.checkPalindrome());
 
-        ll.print(); // 1->2->2->1
-        System.out.println(ll.checkPalindrome());
+        head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = head;
+        // 1->2->3->1
+        System.out.println(isCycle());
     }
 }
