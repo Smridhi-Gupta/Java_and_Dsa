@@ -22,7 +22,7 @@ public class LinkedList {
         }
         // step2 = newNode next = head
         newNode.next = head; //link
-
+// 10->1->2->null
         // step3 = head = newNode
         head = newNode;
     }
@@ -216,11 +216,11 @@ public class LinkedList {
         }
         return true;
     }
-    
+
     public static boolean isCycle() { // Floyd's Cycle Finding Algorithm
         Node slow = head;
         Node fast = head;
-        
+
         while(fast != null && fast.next != null) {
             slow = slow.next; // +1
             fast = fast.next.next; // +2
