@@ -33,9 +33,26 @@ public class Stack2 {
             head = head.next;
             return top;
         }
+        // peek
+        public static int peek() {
+            if (isEmpty()) {
+                return -1;
+            }
+            return head.data;
+        }
     }
 
     public static void main(String[] args) {
-
+        stack s = new stack();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        s.push(4);
+        s.push(5);
+        s.pop();
+        while (!s.isEmpty()) {
+            System.out.println(s.peek());
+            s.pop();
+        }
     }
 }
