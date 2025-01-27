@@ -15,14 +15,25 @@ public class validParenthesis {
                 if (s.isEmpty()) {
                     return false;
                 }
-                if (ch == null) {
-                    
+                if ((s.peek() == '(' && ch == ')')
+                || (s.peek() == '{' && ch == '}')
+                        || (s.peek() == '[' && ch == ']'))
+                {
+                    s.pop();
+                } else {
+                    return false;
                 }
             } 
+        }
+        if (s.isEmpty()) {
+            return true;
+        } else {
+            return false;
         }
     }
 
     public static void main(String[] args) {
         String str = "({}) []"; // true
+        System.out.println(isValid(str));
     }
 }
