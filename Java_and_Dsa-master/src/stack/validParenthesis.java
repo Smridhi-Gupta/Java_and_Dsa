@@ -9,8 +9,16 @@ public class validParenthesis {
             char ch = str.charAt(i);
             //opening
             if (ch == '(' || ch == '{' || ch == '[') {
-                
-            }
+                s.push(ch);
+            } else {
+                // closing
+                if (s.isEmpty()) {
+                    return false;
+                }
+                if (ch == null) {
+                    
+                }
+            } 
         }
     }
 
