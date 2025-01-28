@@ -15,9 +15,9 @@ public class validParenthesis {
                 if (s.isEmpty()) {
                     return false;
                 }
-                if ((s.peek() == '(' && ch == ')')
+                if ( (s.peek() == '(' && ch == ')')
                 || (s.peek() == '{' && ch == '}')
-                        || (s.peek() == '[' && ch == ']'))
+                        || (s.peek() == '[' && ch == ']') )
                 {
                     s.pop();
                 } else {
@@ -33,7 +33,7 @@ public class validParenthesis {
     }
 
     public static void main(String[] args) {
-        String str = "({}) []"; // true
+        String str = "({})[] "; // true
         System.out.println(isValid(str));
     }
 }
