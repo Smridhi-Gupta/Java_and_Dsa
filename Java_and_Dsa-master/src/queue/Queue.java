@@ -25,6 +25,23 @@ public class Queue {
             rear = rear + 1;
             arr[rear] = data;
         }
+
+        // remove
+        public static int remove() {
+            if(isEmpty()) {
+                System.out.println("empty queue");
+                return -1;
+            }
+            int front = arr[0];
+            for (int i = 0; i < rear; i++) {
+                arr[i] = arr[i + 1];
+            }
+            rear = rear - 1;
+            return front;
+        }
+
+        // peek
+
     }
 
     public static void main(String[] args) {
