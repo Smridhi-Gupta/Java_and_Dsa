@@ -41,10 +41,23 @@ public class Queue {
         }
 
         // peek
-
+        public static int peek() {
+            if (isEmpty()) {
+                System.out.println("empty queue");
+                return -1;
+            }
+            return arr[0];
+        }
     }
 
     public static void main(String[] args) {
-
+        Queuee q = new Queuee(5);
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        while (!q.isEmpty()) {
+            System.out.println(q.peek());
+            q.remove();
+        }
     }
 }
