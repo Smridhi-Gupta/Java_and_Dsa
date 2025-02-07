@@ -1,40 +1,25 @@
 package queue;
 
 public class circularUsingLL {
-    static class Queuee {
-        static int arr[];
-        static int size;
-        static int rear;
-        static int front;
-
-        Queuee(int n) {
-            arr = new int[n];
-            size = n;
-            rear = -1;
-            front = -1;
+    static class Node {
+        int data;
+        Node next;
+        Node(int data) {
+            this.data = data;
+            this.next = null;
         }
+    }
+    static class Queuee {
+        static Node head = null;
+        static Node tail = null;
 
         public static boolean isEmpty() {
-            return rear == -1 && front == -1;
-        }
-
-        public static boolean isFull() {
-            return (rear + 1) % size == front;
+            return head == null && tail == null;
         }
 
         // add
         public static void add(int data) {
-            if (isFull()) {
-                System.out.println("queue is full");
-                return;
-            }
 
-            // adding frst element
-            if (front == -1) {
-                front = 0;
-            }
-            rear = (rear + 1) % size;
-            arr[rear] = data;
         }
 
         // remove
