@@ -19,7 +19,13 @@ public class circularUsingLL {
 
         // add
         public static void add(int data) {
-
+            Node newNode = new Node(data);
+            if (head == null) {
+                head = tail = newNode;
+                return;
+            }
+            tail.next = newNode;
+            tail = newNode;
         }
 
         // remove
@@ -28,15 +34,14 @@ public class circularUsingLL {
                 System.out.println("empty queue");
                 return -1;
             }
-            int result = arr[front];
-
-            // last element delete
-            if (rear == front) {
-                rear = front = -1;
+            int front = head.data;;
+            // single element
+            if (tail == head) {
+                tail = head = null;
             } else {
-                front = (front + 1) % size;
+                head = head.next;
             }
-            return result;
+            return front;
         }
 
         // peek
@@ -45,12 +50,12 @@ public class circularUsingLL {
                 System.out.println("empty queue");
                 return -1;
             }
-            return arr[front];
+            return head.data;
         }
     }
 
     public static void main(String[] args) {
-        Queuee q = new Queuee(3);
+        Queuee q = new Queuee();
         q.add(1);
         q.add(2);
         q.add(3);
