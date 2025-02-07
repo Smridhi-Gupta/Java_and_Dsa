@@ -28,8 +28,24 @@ public class QueueUsingTwoStacks {
            }
            return s1.pop();
         }
+
+        // peek
+        public static int peek() {
+           if (isEmpty()) {
+               System.out.println("queue empty");
+               return -1;
+           }
+           return s1.peek();
+        }
     }
     public static void main(String[] args) {
-
+        Queue q = new Queue();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        while (!q.isEmpty()) {
+            System.out.println(q.peek());
+            q.remove();
+        }
     }
 }
