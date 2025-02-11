@@ -11,6 +11,7 @@ public class stackUsingTwoQueues {
             return q1.isEmpty() && q2.isEmpty();
         }
 
+        // o(1)
         public static void push(int data) {
             if (!q1.isEmpty()) {
                 q1.add(data);
@@ -19,6 +20,7 @@ public class stackUsingTwoQueues {
             }
         }
 
+        // o(n)
         public static int pop() {
             if (isEmpty()) {
                 System.out.println("Empty stack");
@@ -46,6 +48,8 @@ public class stackUsingTwoQueues {
             }
             return top;
         }
+
+        // o(n)
         public static int peek() {
             if (isEmpty()) {
                 System.out.println("Empty stack");
