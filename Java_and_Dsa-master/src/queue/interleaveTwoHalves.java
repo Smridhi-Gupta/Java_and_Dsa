@@ -10,6 +10,10 @@ public class interleaveTwoHalves {
         for (int i = 0; i < size/2; i++) {
             firsHalf.add(q.remove());
         }
+        while (!firsHalf.isEmpty()) {
+            q.add(firsHalf.remove());
+            q.add(q.remove());
+        }
     }
 
     public static void main(String[] args) {
@@ -25,5 +29,9 @@ public class interleaveTwoHalves {
         q.add(9);
         q.add(10);
         interLeave(q);
+        while (!q.isEmpty()) {
+            System.out.print(q.remove() + " ");
+        }
+        System.out.println();
     }
 }
