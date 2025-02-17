@@ -3,17 +3,17 @@ package greedyAlgorithms;
 import java.util.ArrayList;
 import java.util.Collections;
 
-//public class jobSequencing {
-//    static class Job {
-//        int deadline;
-//        int profit;
-//        int id; // A[0] B[1]
-//        public Job(int i, int d, int p) {
-//           id = i;
-//           deadline = d;
-//           profit = p;
-//        }
-//    }
+public class jobSequencing {
+    static class Job {
+        int deadline;
+        int profit;
+        int id; // A[0] B[1]
+        public Job(int i, int d, int p) {
+           id = i;
+           deadline = d;
+           profit = p;
+        }
+    }
 
     public static void main(String[] args) {
         int jobsInfo[][] = {{4, 20}, {1, 10}, {1, 40}, {1, 30}};
