@@ -11,5 +11,17 @@ public class chocola {
 
         Arrays.sort(costVer, Collections.reverseOrder());
         Arrays.sort(costHor, Collections.reverseOrder());
+
+        int h = 0, v = 0;
+        int hp = 0, vp = 0;
+        int cost = 0;
+
+        while (h < costHor.length && v < costVer.length) {
+            // vertical cost < hor cost
+            if (costVer[v] <= costHor[h]) { // horizontal cut
+                cost += (costHor[h] * vp);
+                hp++;
+            }
+        }
     }
 }
