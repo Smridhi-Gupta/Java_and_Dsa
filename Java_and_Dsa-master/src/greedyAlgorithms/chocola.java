@@ -21,6 +21,10 @@ public class chocola {
             if (costVer[v] <= costHor[h]) { // horizontal cut
                 cost += (costHor[h] * vp);
                 hp++;
+            } else { // vertical cut
+                cost += (costVer[v] * hp);
+                vp++;
+                v++;
             }
         }
     }
