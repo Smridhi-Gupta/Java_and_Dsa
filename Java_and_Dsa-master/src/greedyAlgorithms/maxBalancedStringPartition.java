@@ -21,6 +21,8 @@ public class maxBalancedStringPartition {
     }
 
     public static void main(String[] args) {
-
+        String str = "LLRRRLLRRL";
+        int n = str.length();
+        System.out.println(BalancedPartition(str, n) + "\n");
     }
 }
