@@ -22,11 +22,15 @@ public class binaryTree {
             }
             Node newNode = new Node(nodes[idx]);
             newNode.left = buildTree(nodes);
-
+            newNode.right = buildTree(nodes);
+            return newNode;
         }
     }
 
     public static void main(String[] args) {
-
+        int nodes[] = {1, 2, 4, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+        BT tree = new BT();
+        Node root = tree.buildTree(nodes);
+        System.out.println(root.data);
     }
 }
