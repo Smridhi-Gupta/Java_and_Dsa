@@ -97,5 +97,6 @@ public class binaryTree {
         tree.postorder(root);
         System.out.println();
         tree.levelOrder(root);
+        System.out.println();
     }
 }
