@@ -85,9 +85,6 @@ public class heightOfTree {
         System.out.println(sum(root));
         System.out.println(diameter(root));
         System.out.println(diameter1(root).diam);
-        System.out.println(diameter1(root).ht);System.out.println(diameter1(root).diam);
-        System.out.println(diameter1(root).ht);System.out.println(diameter1(root).diam);
-        System.out.println(diameter1(root).ht);System.out.println(diameter1(root).diam);
         System.out.println(diameter1(root).ht);
     }
 }
