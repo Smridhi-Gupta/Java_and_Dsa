@@ -87,6 +87,18 @@ public class heightOfTree {
         return true;
     }
 
+    public static boolean isSubtree(Node root, Node subRoot) {
+        if (root == null) {
+            return false;
+        }
+        if (root.data == subRoot.data) {
+            if (isIdentical(root, subRoot)) {
+                return true;
+            }
+        }
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -101,5 +113,11 @@ public class heightOfTree {
         System.out.println(diameter(root));
         System.out.println(diameter1(root).diam);
         System.out.println(diameter1(root).ht);
+
+        Node subRoot = new Node(2);
+        subRoot.left = new Node(4);
+        subRoot.right = new Node(5);
+        System.out.println(isSubtree(root, subRoot));
+
     }
 }
