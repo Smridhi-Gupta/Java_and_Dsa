@@ -169,6 +169,11 @@ public class heightOfTree {
     }
 
     public static void main(String[] args) {
+//             1
+//           /   \
+//          2     3
+//         / \   / \
+//        4   5 6   7
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
@@ -176,26 +181,29 @@ public class heightOfTree {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
+        System.out.println("height of a tree : " + height(root));
 
-        System.out.println(height(root));
+        System.out.println("count of nodes : " + count(root));
 
-        System.out.println(count(root));
+        System.out.println("sum of nodes : " + sum(root));
 
-        System.out.println(sum(root));
+        System.out.println("diameter of a tree by approach 1 : " + diameter(root));
 
-        System.out.println(diameter(root));
-
-        System.out.println(diameter1(root).diam);
-        System.out.println(diameter1(root).ht);
-
+        System.out.println("diameter of a tree by approach 2 : " + diameter1(root).diam);
+        System.out.println("height of a tree by approach 2 : " + diameter1(root).ht);
+//          2
+//         / \
+//        4   5
         Node subRoot = new Node(2);
         subRoot.left = new Node(4);
         subRoot.right = new Node(5);
-        System.out.println(isSubtree(root, subRoot));
+        System.out.println("subtree of another tree : " + isSubtree(root, subRoot));
 
+        System.out.println("top view of a tree : ");
         topView(root);
 
         int k = 2;
+        System.out.println("print nodes of kth level of a tree : ");
         KLevel(root, 1, k);
     }
 }
