@@ -130,23 +130,28 @@ public class heightOfTree {
                 } else {
                     q.add(null);
                 }
-            }
+            } else {
+                // first time hd is occuring
+                if (!map.containsKey(curr.hd)) {
+                    map.put(curr.hd, curr.node);
+                }
 
-            // first time hd is occuring
-            if (!map.containsKey(curr.hd)) {
-                map.put(curr.hd, curr.node);
-            }
+                if (curr.node.left != null) {
+                    q.add(new Info1(curr.node.left, curr.hd - 1));
+                    min = Math.min(min, curr.hd - 1);
+                }
 
-            if (curr.node.left != null) {
-                q.add(new Info1(curr.node.left, curr.hd - 1));
-                min = Math.min(min, curr.hd - 1);
-            }
-
-            if (curr.node.right != null) {
-                q.add(new Info1(curr.node.right, curr.hd + 1));
-                max = Math.max(max, curr.hd + 1);
+                if (curr.node.right != null) {
+                    q.add(new Info1(curr.node.right, curr.hd + 1));
+                    max = Math.max(max, curr.hd + 1);
+                }
             }
         }
+
+        for (int i = min; i <= max ; i++) {
+            System.out.print(map.get(i).data+" ");
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -168,6 +173,6 @@ public class heightOfTree {
         subRoot.left = new Node(4);
         subRoot.right = new Node(5);
         System.out.println(isSubtree(root, subRoot));
-
+        topView(root);
     }
 }
