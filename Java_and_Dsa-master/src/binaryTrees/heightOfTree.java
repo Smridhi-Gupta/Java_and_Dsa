@@ -131,6 +131,21 @@ public class heightOfTree {
                     q.add(null);
                 }
             }
+
+            // first time hd is occuring
+            if (!map.containsKey(curr.hd)) {
+                map.put(curr.hd, curr.node);
+            }
+
+            if (curr.node.left != null) {
+                q.add(new Info1(curr.node.left, curr.hd - 1));
+                min = Math.min(min, curr.hd - 1);
+            }
+
+            if (curr.node.right != null) {
+                q.add(new Info1(curr.node.right, curr.hd + 1));
+                max = Math.max(max, curr.hd + 1);
+            }
         }
     }
 
