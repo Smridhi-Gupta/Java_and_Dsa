@@ -89,13 +89,17 @@ public class binaryTree {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
         BT tree = new BT();
         Node root = tree.buildTree(nodes);
-        System.out.println(root.data);
+        System.out.println("root of a tree : " +root.data);
+        System.out.println("preorder of a tree : ");
         tree.preorder(root);
         System.out.println();
+        System.out.println("inorder of a tree : ");
         tree.inorder(root);
         System.out.println();
+        System.out.println("postorder of a tree : ");
         tree.postorder(root);
         System.out.println();
+        System.out.println("level order of a tree : ");
         tree.levelOrder(root);
         System.out.println();
     }
