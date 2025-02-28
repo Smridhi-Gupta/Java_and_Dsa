@@ -99,6 +99,21 @@ public class heightOfTree {
         return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
 
+    static class Info1 {
+        Node node;
+        int hd;
+
+        public Info1(Node node, int hd) {
+            this.node = node;
+            this.hd = hd;
+        }
+    }
+
+    public static void topView(Node root) {
+        // level order
+
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
