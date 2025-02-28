@@ -1,5 +1,9 @@
 package binaryTrees;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class heightOfTree {
     static class Node {
         int data;
@@ -111,7 +115,23 @@ public class heightOfTree {
 
     public static void topView(Node root) {
         // level order
+        Queue<Info1> q = new LinkedList<>();
+        HashMap<Integer, Node> map = new HashMap<>();
 
+        int min = 0, max = 0;
+        q.add(new Info1(root, 0));
+        q.add(null);
+
+        while (!q.isEmpty()) {
+            Info1 curr = q.remove();
+            if (curr == null) {
+                if (q.isEmpty()) {
+                    break;
+                } else {
+                    q.add(null);
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
