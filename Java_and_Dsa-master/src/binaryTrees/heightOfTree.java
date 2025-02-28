@@ -154,6 +154,20 @@ public class heightOfTree {
         System.out.println();
     }
 
+    public static void KLevel(Node root, int level, int k) {
+        if (root == null) {
+            return;
+        }
+
+        if (level == k) {
+            System.out.print(root.data+" ");
+            return;
+        }
+
+        KLevel(root.left, level + 1, k);
+        KLevel(root.right, level + 1, k);
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -162,10 +176,15 @@ public class heightOfTree {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
+
         System.out.println(height(root));
+
         System.out.println(count(root));
+
         System.out.println(sum(root));
+
         System.out.println(diameter(root));
+
         System.out.println(diameter1(root).diam);
         System.out.println(diameter1(root).ht);
 
@@ -173,6 +192,10 @@ public class heightOfTree {
         subRoot.left = new Node(4);
         subRoot.right = new Node(5);
         System.out.println(isSubtree(root, subRoot));
+
         topView(root);
+
+        int k = 2;
+        KLevel(root, 1, k);
     }
 }
