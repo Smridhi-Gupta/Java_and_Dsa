@@ -176,7 +176,12 @@ public class heightOfTree {
         getPath(root, n2, path2);
 
         // last common ancestor
-
+        int i = 0;
+        for (i < path1.size() && path2.size(); i++) {
+            if (path1.get(i) != path1.get(i)) {
+                break;
+            }
+        }
     }
 
     public static void main(String[] args) {
