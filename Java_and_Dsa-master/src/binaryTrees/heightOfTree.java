@@ -1,5 +1,6 @@
 package binaryTrees;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -166,6 +167,16 @@ public class heightOfTree {
 
         KLevel(root.left, level + 1, k);
         KLevel(root.right, level + 1, k);
+    }
+
+    public static Node lca(Node root, int n1, int n2) {
+        ArrayList<Integer> path1 = new ArrayList<>();
+        ArrayList<Integer> path2 = new ArrayList<>();
+        getPath(root, n1, path1);
+        getPath(root, n2, path2);
+
+        // last common ancestor
+
     }
 
     public static void main(String[] args) {
