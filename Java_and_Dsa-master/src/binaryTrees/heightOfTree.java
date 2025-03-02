@@ -182,6 +182,19 @@ public class heightOfTree {
                 break;
             }
         }
+    }public static Node lca(Node root, int n1, int n2) {
+        ArrayList<Integer> path1 = new ArrayList<>();
+        ArrayList<Integer> path2 = new ArrayList<>();
+        getPath(root, n1, path1);
+        getPath(root, n2, path2);
+
+        // last common ancestor
+        int i = 0;
+        for (i < path1.size() && path2.size(); i++) {
+            if (path1.get(i) != path1.get(i)) {
+                break;
+            }
+        }
     }
 
     public static void main(String[] args) {
