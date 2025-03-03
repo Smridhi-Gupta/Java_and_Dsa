@@ -169,9 +169,22 @@ public class heightOfTree {
         KLevel(root.right, level + 1, k);
     }
 
+    public static boolean getPath(Node root, int n, ArrayList<Node> path) {
+        path.add(root);
+
+        if (root.data == n) {
+            return true;
+        }
+
+        boolean foundLeft = getPath(root.left, n, path);
+        boolean foundRight = getPath(root.right, n, path);
+    }
+
     public static Node lca(Node root, int n1, int n2) {
-        ArrayList<Integer> path1 = new ArrayList<>();
-        ArrayList<Integer> path2 = new ArrayList<>();
+        ArrayList<Node> path1 = new ArrayList<>();
+        ArrayList<Node> path2 = new ArrayList<>();
+
+        // root se node tak ka path store in path1/path2
         getPath(root, n1, path1);
         getPath(root, n2, path2);
 
@@ -182,19 +195,9 @@ public class heightOfTree {
                 break;
             }
         }
-    }public static Node lca(Node root, int n1, int n2) {
-        ArrayList<Integer> path1 = new ArrayList<>();
-        ArrayList<Integer> path2 = new ArrayList<>();
-        getPath(root, n1, path1);
-        getPath(root, n2, path2);
 
-        // last common ancestor
-        int i = 0;
-        for (i < path1.size() && path2.size(); i++) {
-            if (path1.get(i) != path1.get(i)) {
-                break;
-            }
-        }
+        // last equal node -> i-1th value
+        Node lca = path1.get(i - 1);
     }
 
     public static void main(String[] args) {
