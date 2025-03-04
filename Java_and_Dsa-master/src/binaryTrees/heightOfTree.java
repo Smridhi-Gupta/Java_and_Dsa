@@ -1,10 +1,5 @@
 package binaryTrees;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class heightOfTree {
     static class Node {
         int data;
@@ -26,41 +21,27 @@ public class heightOfTree {
         return Math.max(lh, rh) + 1;
     }
 
-    public static void KLevel(Node root, int level, int k) {
-        if (root == null) {
-            return;
-        }
-
-        if (level == k) {
-            System.out.print(root.data+" ");
-            return;
-        }
-
-        KLevel(root.left, level + 1, k);
-        KLevel(root.right, level + 1, k);
-    }
-
-    public static boolean getPath(Node root, int n, ArrayList<Node> path) {
-        if (root == null) {
-            return false;
-        }
-
-        path.add(root);
-
-        if (root.data == n) {
-            return true;
-        }
-
-        boolean foundLeft = getPath(root.left, n, path);
-        boolean foundRight = getPath(root.right, n, path);
-
-        if (foundLeft || foundRight) {
-            return true;
-        }
-
-        path.remove(path.size() - 1);
-        return false;
-    }
+//    public static boolean getPath(Node root, int n, ArrayList<Node> path) {
+//        if (root == null) {
+//            return false;
+//        }
+//
+//        path.add(root);
+//
+//        if (root.data == n) {
+//            return true;
+//        }
+//
+//        boolean foundLeft = getPath(root.left, n, path);
+//        boolean foundRight = getPath(root.right, n, path);
+//
+//        if (foundLeft || foundRight) {
+//            return true;
+//        }
+//
+//        path.remove(path.size() - 1);
+//        return false;
+//    }
 
 //    public static Node lca(Node root, int n1, int n2) {
 //        ArrayList<Node> path1 = new ArrayList<>();
@@ -96,6 +77,7 @@ public class heightOfTree {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
+
         System.out.println("height of a tree : " + height(root));
 
         int n1 = 4, n2 = 5;
@@ -106,9 +88,5 @@ public class heightOfTree {
         Node subRoot = new Node(2);
         subRoot.left = new Node(4);
         subRoot.right = new Node(5);
-
-        int k = 2;
-        System.out.println("print nodes of kth level of a tree : ");
-        KLevel(root, 1, k);
     }
 }
