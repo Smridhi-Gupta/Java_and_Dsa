@@ -26,57 +26,6 @@ public class heightOfTree {
         return Math.max(lh, rh) + 1;
     }
 
-    static class Info1 {
-        Node node;
-        int hd;
-
-        public Info1(Node node, int hd) {
-            this.node = node;
-            this.hd = hd;
-        }
-    }
-
-    public static void topView(Node root) {
-        // level order
-        Queue<Info1> q = new LinkedList<>();
-        HashMap<Integer, Node> map = new HashMap<>();
-
-        int min = 0, max = 0;
-        q.add(new Info1(root, 0));
-        q.add(null);
-
-        while (!q.isEmpty()) {
-            Info1 curr = q.remove();
-            if (curr == null) {
-                if (q.isEmpty()) {
-                    break;
-                } else {
-                    q.add(null);
-                }
-            } else {
-                // first time hd is occuring
-                if (!map.containsKey(curr.hd)) {
-                    map.put(curr.hd, curr.node);
-                }
-
-                if (curr.node.left != null) {
-                    q.add(new Info1(curr.node.left, curr.hd - 1));
-                    min = Math.min(min, curr.hd - 1);
-                }
-
-                if (curr.node.right != null) {
-                    q.add(new Info1(curr.node.right, curr.hd + 1));
-                    max = Math.max(max, curr.hd + 1);
-                }
-            }
-        }
-
-        for (int i = min; i <= max ; i++) {
-            System.out.print(map.get(i).data+" ");
-        }
-        System.out.println();
-    }
-
     public static void KLevel(Node root, int level, int k) {
         if (root == null) {
             return;
@@ -157,9 +106,6 @@ public class heightOfTree {
         Node subRoot = new Node(2);
         subRoot.left = new Node(4);
         subRoot.right = new Node(5);
-
-        System.out.println("top view of a tree : ");
-        topView(root);
 
         int k = 2;
         System.out.println("print nodes of kth level of a tree : ");
