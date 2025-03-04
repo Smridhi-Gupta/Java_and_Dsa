@@ -26,27 +26,6 @@ public class heightOfTree {
         return Math.max(lh, rh) + 1;
     }
 
-    static class Info {
-        int diam;
-        int ht;
-
-        public Info(int diam, int ht) {
-            this.diam = diam;
-            this.ht = ht;
-        }
-    }
-
-    public static Info diameter1(Node root) {
-        if (root == null) {
-            return new Info(0, 0);
-        }
-        Info leftInfo = diameter1(root.left);
-        Info rightInfo = diameter1(root.right);
-        int diam = Math.max(Math.max(leftInfo.diam, rightInfo.diam), leftInfo.ht + rightInfo.ht + 1);
-        int ht = Math.max(leftInfo.ht, rightInfo.ht + 1);
-        return new Info(diam, ht);
-    }
-
     public static boolean isIdentical(Node node, Node subRoot) {
         if (node == null && subRoot == null) {
             return true;
@@ -196,8 +175,7 @@ public class heightOfTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         System.out.println("height of a tree : " + height(root));
-        System.out.println("diameter of a tree by approach 2 : " + diameter1(root).diam);
-        System.out.println("height of a tree by approach 2 : " + diameter1(root).ht);
+
         int n1 = 4, n2 = 5;
 //        System.out.println(lca(root, n1, n2).data);
 //          2
