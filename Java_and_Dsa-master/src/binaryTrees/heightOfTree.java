@@ -26,14 +26,7 @@ public class heightOfTree {
         return Math.max(lh, rh) + 1;
     }
 
-    public static int sum(Node root) {
-        if (root == null) {
-            return 0;
-        }
-        int leftSum = sum(root.left);
-        int rightSum = sum(root.right);
-        return leftSum + rightSum + root.data;
-    }
+
 
     public static int diameter(Node root) {
         if (root == null) {
@@ -218,7 +211,6 @@ public class heightOfTree {
         root.right.right = new Node(7);
         System.out.println("height of a tree : " + height(root));
 
-        System.out.println("sum of nodes : " + sum(root));
 
         System.out.println("diameter of a tree by approach 1 : " + diameter(root));
 
