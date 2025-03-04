@@ -26,15 +26,6 @@ public class heightOfTree {
         return Math.max(lh, rh) + 1;
     }
 
-    public static int count(Node root) {
-        if (root == null) {
-            return 0;
-        }
-        int leftCount = count(root.left);
-        int rightCount = count(root.right);
-        return leftCount + rightCount + 1;
-    }
-
     public static int sum(Node root) {
         if (root == null) {
             return 0;
@@ -191,26 +182,26 @@ public class heightOfTree {
         return false;
     }
 
-    public static Node lca(Node root, int n1, int n2) {
-        ArrayList<Node> path1 = new ArrayList<>();
-        ArrayList<Node> path2 = new ArrayList<>();
-
-        // root se node tak ka path store in path1/path2
-        getPath(root, n1, path1);
-        getPath(root, n2, path2);
-
-        // last common ancestor
-        int i = 0;
-        for (; i < path1.size() && path2.size(); i++) {
-            if (path1.get(i) != path1.get(i)) {
-                break;
-            }
-        }
-
-        // last equal node -> i-1th value
-        Node lca = path1.get(i - 1);
-        return lca;
-    }
+//    public static Node lca(Node root, int n1, int n2) {
+//        ArrayList<Node> path1 = new ArrayList<>();
+//        ArrayList<Node> path2 = new ArrayList<>();
+//
+//        // root se node tak ka path store in path1/path2
+//        getPath(root, n1, path1);
+//        getPath(root, n2, path2);
+//
+//        // last common ancestor
+//        int i = 0;
+//        for (; i < path1.size() && path2.size(); i++) {
+//            if (path1.get(i) != path1.get(i)) {
+//                break;
+//            }
+//        }
+//
+//        // last equal node -> i-1th value
+//        Node lca = path1.get(i - 1);
+//        return lca;
+//    }
 
     public static void main(String[] args) {
 //             1
@@ -227,8 +218,6 @@ public class heightOfTree {
         root.right.right = new Node(7);
         System.out.println("height of a tree : " + height(root));
 
-        System.out.println("count of nodes : " + count(root));
-
         System.out.println("sum of nodes : " + sum(root));
 
         System.out.println("diameter of a tree by approach 1 : " + diameter(root));
@@ -236,7 +225,7 @@ public class heightOfTree {
         System.out.println("diameter of a tree by approach 2 : " + diameter1(root).diam);
         System.out.println("height of a tree by approach 2 : " + diameter1(root).ht);
         int n1 = 4, n2 = 5;
-        System.out.println(lca(root, n1, n2).data);
+//        System.out.println(lca(root, n1, n2).data);
 //          2
 //         / \
 //        4   5
