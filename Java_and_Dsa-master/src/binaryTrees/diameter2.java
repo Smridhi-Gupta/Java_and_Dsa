@@ -34,7 +34,7 @@ public class diameter2 {
     }
 
     public static void main(String[] args) {
-        //             1
+//             1
 //           /   \
 //          2     3
 //         / \   / \
