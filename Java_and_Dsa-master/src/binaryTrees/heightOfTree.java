@@ -26,20 +26,6 @@ public class heightOfTree {
         return Math.max(lh, rh) + 1;
     }
 
-
-
-    public static int diameter(Node root) {
-        if (root == null) {
-            return 0;
-        }
-        int leftDiam = diameter(root.left);
-        int leftHt = height(root.left);
-        int rightDiam = diameter(root.right);
-        int rightHt = height(root.right);
-        int selfDiam = leftHt + rightHt + 1;
-        return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
-    }
-
     static class Info {
         int diam;
         int ht;
@@ -210,10 +196,6 @@ public class heightOfTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         System.out.println("height of a tree : " + height(root));
-
-
-        System.out.println("diameter of a tree by approach 1 : " + diameter(root));
-
         System.out.println("diameter of a tree by approach 2 : " + diameter1(root).diam);
         System.out.println("height of a tree by approach 2 : " + diameter1(root).ht);
         int n1 = 4, n2 = 5;
