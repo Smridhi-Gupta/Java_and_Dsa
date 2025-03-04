@@ -55,7 +55,7 @@ public class heightOfTree {
         int selfDiam = leftHt + rightHt + 1;
         return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
     }
-    
+
     static class Info {
         int diam;
         int ht;
