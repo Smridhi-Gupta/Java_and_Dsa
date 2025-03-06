@@ -74,5 +74,8 @@ public class minimumDistance {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
+
+        int n1 = 4, n2 = 6;
+        System.out.println(minDist(root, n1, n2));
     }
 }
