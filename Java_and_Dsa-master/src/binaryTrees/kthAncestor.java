@@ -3,13 +3,30 @@ package binaryTrees;
 public class kthAncestor {
     static class Node {
         int data;
-        minimumDistance.Node left, right;
+        Node left, right;
 
         public Node(int data) {
             this.data = data;
             this.left = null;
             this.right = null;
         }
+    }
+
+    public static int KAnncestor(Node root, int n, int k) {
+        if (root == null)
+            return -1;
+
+        if (root.data == n)
+            return 0;
+
+        int leftDist = KAnncestor(root.left, n, k);
+        int rightDist = KAnncestor(root.right, n, k);
+
+
+        if (leftDist == -1 && rightDist == -1)
+            return -1;
+
+        int max =
     }
 
     public static void main(String[] args) {
