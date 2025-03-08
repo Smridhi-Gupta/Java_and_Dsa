@@ -1,5 +1,6 @@
 package binarySearchTrees;
 
+import binaryTrees.binaryTree;
 import binaryTrees.transformToSumTree;
 
 public class buildTree {
@@ -19,6 +20,25 @@ public class buildTree {
             return root;
         }
 
-        if
+        if (root.data > val) {
+            // left subtree
+            root.left = insert(root.left, val);
+        } else { // right subtree
+            root.right = insert(root.right, val);
+        }
+        return root;
+    }
+
+    public static void inorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.data+" ");
+        inorder(root.right);
+    }
+
+    public static void main(String[] args) {
+
     }
 }
