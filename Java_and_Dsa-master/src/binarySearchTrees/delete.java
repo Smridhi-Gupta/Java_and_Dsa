@@ -1,0 +1,21 @@
+package binarySearchTrees;
+
+public class delete {
+    public static void main(String[] args) {
+        int values[] = {5, 1, 3, 4, 2, 7};
+        search.Node root = null;
+        for (int i = 0; i < values.length; i++) {
+            root = insert(root, values[i]);
+        }
+
+        inorder(root);
+
+        System.out.println();
+
+        if (search(root, 1)) {
+            System.out.println("found");
+        } else {
+            System.out.println("Not found");
+        }
+    }
+}
