@@ -30,7 +30,10 @@ public class delete {
             }
 
             // case 3 - both children
-
+            Node IS = findInorderSuccessor(root.right);
+            root.data = IS.data;
+            root.right = delete(root.right, IS.data);
         }
+        return root;
     }
 }
