@@ -80,6 +80,7 @@ public class delete {
         System.out.println();
 
         root = delete(root, 1);
+        root = delete(root, 10);
         System.out.println();
 
         inorder(root);
