@@ -11,9 +11,9 @@ public class printInRange {
         }
     }
 
-    public static delete.Node insert(delete.Node root, int val) {
+    public static Node insert(Node root, int val) {
         if (root == null) {
-            root = new delete.Node(val);
+            root = new Node(val);
             return root;
         }
 
@@ -26,7 +26,7 @@ public class printInRange {
         return root;
     }
 
-    public static void inorder(delete.Node root) {
+    public static void inorder(Node root) {
         if (root == null) {
             return;
         }
@@ -57,7 +57,7 @@ public class printInRange {
 
     public static void main(String[] args) {
         int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
-        delete.Node root = null;
+        Node root = null;
 
         for (int i = 0; i < values.length; i++) {
             root = insert(root, values[i]);
@@ -65,5 +65,7 @@ public class printInRange {
 
         inorder(root);
         System.out.println();
+
+        printRange(root, 5, 12);
     }
 }
