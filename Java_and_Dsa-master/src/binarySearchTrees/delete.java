@@ -11,6 +11,15 @@ public class delete {
         }
     }
 
+    public static void inorder(search.Node root) {
+        if (root == null) {
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.data+" ");
+        inorder(root.right);
+    }
+
     public static Node delete(Node root, int val) {
         if (root.data < val) {
             root.right = delete(root.right, val);
@@ -35,5 +44,16 @@ public class delete {
             root.right = delete(root.right, IS.data);
         }
         return root;
+    }
+
+    public static Node findInorderSuccessor(Node root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
