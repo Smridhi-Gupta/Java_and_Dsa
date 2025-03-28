@@ -13,9 +13,9 @@ public class printRootToLeaf {
         }
     }
 
-    public static printInRange.Node insert(printInRange.Node root, int val) {
+    public static Node insert(Node root, int val) {
         if (root == null) {
-            root = new printInRange.Node(val);
+            root = new Node(val);
             return root;
         }
 
@@ -28,7 +28,7 @@ public class printRootToLeaf {
         return root;
     }
 
-    public static void inorder(printInRange.Node root) {
+    public static void inorder(Node root) {
         if (root == null) {
             return;
         }
@@ -59,7 +59,7 @@ public class printRootToLeaf {
 
     public static void main(String[] args) {
         int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
-        printInRange.Node root = null;
+        Node root = null;
 
         for (int i = 0; i < values.length; i++) {
             root = insert(root, values[i]);
@@ -67,5 +67,7 @@ public class printRootToLeaf {
 
         inorder(root);
         System.out.println();
+
+        printRoot2Leaf(root, new ArrayList<>());
     }
 }
