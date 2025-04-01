@@ -38,6 +38,8 @@ public class validBST {
     public static boolean isValidBSt(Node root, Node min, Node max) {
         if (root == null) {
             return true;
+        }       if (root == null) {
+            return true;
         }
 
         if (min != null && root.data <= min.data) {
