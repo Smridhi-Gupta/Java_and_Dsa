@@ -40,13 +40,18 @@ public class validBST {
             return true;
         }
 
-        if () {
-
+        if (min != null && root.data <= min.data) {
+            return false;
+        } else if (max != null && root.data >= max.data) {
+            return false;
         }
+
+        return isValidBSt(root.left, min, root)
+                && isValidBSt(root.right, min, root);
     }
 
     public static void main(String[] args) {
-        int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
+        int values[] = {1, 1, 1};
         Node root = null;
 
         for (int i = 0; i < values.length; i++) {
@@ -55,5 +60,11 @@ public class validBST {
 
         inorder(root);
         System.out.println();
+
+        if (isValidBSt(root, null, null)) {
+            System.out.println("valid");
+        } else {
+            System.out.println("not valid");
+        }
     }
 }
