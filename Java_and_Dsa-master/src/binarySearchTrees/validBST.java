@@ -34,4 +34,26 @@ public class validBST {
         System.out.print(root.data+" ");
         inorder(root.right);
     }
+
+    public static boolean isValidBSt(Node root, Node min, Node max) {
+        if (root == null) {
+            return true;
+        }
+
+        if () {
+
+        }
+    }
+
+    public static void main(String[] args) {
+        int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
+        Node root = null;
+
+        for (int i = 0; i < values.length; i++) {
+            root = insert(root, values[i]);
+        }
+
+        inorder(root);
+        System.out.println();
+    }
 }
