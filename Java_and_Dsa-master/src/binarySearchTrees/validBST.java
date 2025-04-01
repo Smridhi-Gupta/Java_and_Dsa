@@ -3,17 +3,17 @@ package binarySearchTrees;
 public class validBST {
     static class Node {
         int data;
-        printRootToLeaf.Node left;
-        printRootToLeaf.Node right;
+        Node left;
+        Node right;
 
         Node(int data) {
             this.data = data;
         }
     }
 
-    public static printRootToLeaf.Node insert(printRootToLeaf.Node root, int val) {
+    public static Node insert(Node root, int val) {
         if (root == null) {
-            root = new printRootToLeaf.Node(val);
+            root = new Node(val);
             return root;
         }
 
@@ -26,7 +26,7 @@ public class validBST {
         return root;
     }
 
-    public static void inorder(printRootToLeaf.Node root) {
+    public static void inorder(Node root) {
         if (root == null) {
             return;
         }
