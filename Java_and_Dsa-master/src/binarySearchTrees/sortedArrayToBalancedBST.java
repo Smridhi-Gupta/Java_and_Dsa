@@ -20,4 +20,15 @@ public class sortedArrayToBalancedBST {
         preorder(root.left);
         preorder(root.right);
     }
+
+    public static void main(String[] args) {
+        int arr[] = {3, 5, 6, 8, 10, 11, 12};
+
+//            8
+//           /  \
+//          5    11
+//         / \   / \
+//        3   6 10 12
+//        expected BST
+    }
 }
