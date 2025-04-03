@@ -1,5 +1,7 @@
 package binarySearchTrees;
 
+import binaryTrees.binaryTree;
+
 public class mirrorBST {
     static class Node {
         int data;
@@ -10,6 +12,28 @@ public class mirrorBST {
             this.data = data;
             this.left = this.right = null;
         }
+    }
+
+    public static void preorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+
+    public static Node createMirror(Node root) { // O(n)
+        if (root == null) {
+            return null;
+        }
+
+        Node leftMirror = createMirror(root.left);
+        Node rightMirror = createMirror(root.right);
+
+        root.left = rightMirror;
+        root.right = leftMirror;
+        return root;
     }
 
     public static void main(String[] args) {
