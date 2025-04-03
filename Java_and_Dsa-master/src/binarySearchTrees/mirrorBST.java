@@ -56,5 +56,8 @@ public class mirrorBST {
 //         10   5
 //         /   / \
 //        11  6   3
+
+        root = createMirror(root);
+        preorder(root);
     }
 }
