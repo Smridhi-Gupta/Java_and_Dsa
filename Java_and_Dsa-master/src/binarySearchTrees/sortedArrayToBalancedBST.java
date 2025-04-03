@@ -21,6 +21,11 @@ public class sortedArrayToBalancedBST {
         preorder(root.right);
     }
 
+    public static Node createBST(int arr[], int st, int end) {
+        int mid = (st + end) / 2;
+        Node root = new Node(arr[mid]);
+    }
+
     public static void main(String[] args) {
         int arr[] = {3, 5, 6, 8, 10, 11, 12};
 
