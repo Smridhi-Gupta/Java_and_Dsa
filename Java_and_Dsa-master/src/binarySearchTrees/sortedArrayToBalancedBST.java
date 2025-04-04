@@ -3,8 +3,8 @@ package binarySearchTrees;
 public class sortedArrayToBalancedBST {
     static class Node {
         int data;
-        mirrorBST.Node left;
-        mirrorBST.Node right;
+        Node left;
+        Node right;
 
         public Node(int data) {
             this.data = data;
@@ -12,7 +12,7 @@ public class sortedArrayToBalancedBST {
         }
     }
 
-    public static void preorder(mirrorBST.Node root) {
+    public static void preorder(Node root) {
         if (root == null) {
             return;
         }
@@ -24,6 +24,10 @@ public class sortedArrayToBalancedBST {
     public static Node createBST(int arr[], int st, int end) {
         int mid = (st + end) / 2;
         Node root = new Node(arr[mid]);
+        root.left = createBST(arr, st, mid - 1);
+        root.right = createBST(arr, mid + 1, end);
+        return root;
+
     }
 
     public static void main(String[] args) {
