@@ -22,6 +22,10 @@ public class sortedArrayToBalancedBST {
     }
 
     public static Node createBST(int arr[], int st, int end) {
+        if (st > end) {
+            return null;
+        }
+
         int mid = (st + end) / 2;
         Node root = new Node(arr[mid]);
         root.left = createBST(arr, st, mid - 1);
@@ -39,5 +43,8 @@ public class sortedArrayToBalancedBST {
 //         / \   / \
 //        3   6 10 12
 //        expected BST
+
+        Node root = createBST(arr, 0, arr.length - 1);
+        preorder(root);
     }
 }
