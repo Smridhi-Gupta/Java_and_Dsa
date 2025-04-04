@@ -1,4 +1,5 @@
 package binarySearchTrees;
+import java.util.*;
 
 public class BSTtoBalancedBST {
     static class Node {
@@ -23,6 +24,7 @@ public class BSTtoBalancedBST {
 
     public static Node balancedBST(Node root) {
         // inorder seq
+        ArrayList<Integer> inorder = new ArrayList<>();
 
         // sorted inorder -> balanced BST
     }
