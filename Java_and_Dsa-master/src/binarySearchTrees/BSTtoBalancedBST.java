@@ -21,6 +21,12 @@ public class BSTtoBalancedBST {
         preorder(root.right);
     }
 
+    public static Node balancedBST(Node root) {
+        // inorder seq
+
+        // sorted inorder -> balanced BST
+    }
+
     public static void main(String[] args) {
 //              8
 //             / \
