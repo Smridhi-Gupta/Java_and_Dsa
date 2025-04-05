@@ -29,11 +29,22 @@ public class BSTtoBalancedBST {
 
         getInorder(root.left, inorder);
         inorder.add(root.data);
+        getInorder(root.right, inorder);
+    }
+
+    public static Node createBST(ArrayList<Integer> inorder, int st, int end) {
+        if (st > end) {
+            return null;
+        }
+
+        int mid = (st + end) / 2;
+        Node root = new Node(inorder.get(mid));
     }
 
     public static Node balancedBST(Node root) {
         // inorder seq
         ArrayList<Integer> inorder = new ArrayList<>();
+        getInorder(root, inorder);
 
         // sorted inorder -> balanced BST
     }
