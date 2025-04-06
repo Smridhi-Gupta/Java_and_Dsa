@@ -39,6 +39,9 @@ public class BSTtoBalancedBST {
 
         int mid = (st + end) / 2;
         Node root = new Node(inorder.get(mid));
+        root.left = createBST(inorder, st, mid - 1);
+        root.right = createBST(inorder, mid + 1, end);
+        return root;
     }
 
     public static Node balancedBST(Node root) {
