@@ -69,13 +69,6 @@ public class BSTtoBalancedBST {
 
         root.right = new Node(10);
         root.right.right = new Node(11);
-        root.right.right.right = new Node(12);        Node root = new Node(8);
-        root.left = new Node(6);
-        root.left.left = new Node(5);
-        root.left.left.left = new Node(3);
-
-        root.right = new Node(10);
-        root.right.right = new Node(11);
         root.right.right.right = new Node(12);
 
 
