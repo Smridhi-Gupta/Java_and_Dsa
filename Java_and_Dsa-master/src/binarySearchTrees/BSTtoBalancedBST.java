@@ -71,7 +71,6 @@ public class BSTtoBalancedBST {
         root.right.right = new Node(11);
         root.right.right.right = new Node(12);
 
-
 //            8
 //           / \
 //          5   11
